@@ -30,9 +30,14 @@ dependencies:
   # add carousel slider
   carousel_slider: ^4.2.1
 
-  # add heroicons
-  heroicons_flutter: ^0.2.3
+  # add colorful safe area
   colorful_safe_area: ^1.0.0
+
+  # add go_router
+  go_router: ^7.0.2
+
+  # add heroicons
+  heroicons: ^0.8.0
 
 
 dev_dependencies:

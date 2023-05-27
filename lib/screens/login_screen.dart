@@ -1,6 +1,7 @@
 import 'package:apebites_mex/styles/styles.dart';
 import 'package:flutter/material.dart';
-import 'package:heroicons_flutter/heroicons_flutter.dart';
+import 'package:go_router/go_router.dart';
+import 'package:heroicons/heroicons.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -42,7 +43,7 @@ class ContinueWithGoogleButton extends StatelessWidget {
     return SizedBox(
         width: 350,
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () => context.go('/home'),
           style: ElevatedButton.styleFrom(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(48),
@@ -95,10 +96,11 @@ class ContinueWithMobileButton extends StatelessWidget {
           child: const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
-                HeroiconsSolid.phone,
+              HeroIcon(
+                HeroIcons.phone,
                 size: 24,
                 color: kPrimaryBoldest,
+                style: HeroIconStyle.solid,
               ),
               SizedBox(
                 width: 20,
