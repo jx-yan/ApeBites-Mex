@@ -1,4 +1,3 @@
-import 'package:apebites_mex/styles/styles.dart';
 import 'package:flutter/material.dart';
 
 class OTPScreen extends StatelessWidget {

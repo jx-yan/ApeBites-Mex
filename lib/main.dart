@@ -15,13 +15,26 @@ final GoRouter _router = GoRouter(
       builder: (BuildContext context, GoRouterState state) {
         return const LoginScreen();
       },
-      routes: <RouteBase>[
+      routes: [
         GoRoute(
-          path: 'home',
-          builder: (BuildContext context, GoRouterState state) {
-            return const HomeScreen();
-          },
-        ),
+            path: 'home',
+            builder: (BuildContext context, GoRouterState state) {
+              return const HomeScreen();
+            },
+            routes: [
+              GoRoute(
+                path: 'reservations',
+                builder: (BuildContext context, GoRouterState state) {
+                  return const ReservationsScreen();
+                },
+              ),
+              GoRoute(
+                path: 'sales',
+                builder: (BuildContext context, GoRouterState state) {
+                  return const SalesScreen();
+                },
+              ),
+            ]),
       ],
     ),
   ],

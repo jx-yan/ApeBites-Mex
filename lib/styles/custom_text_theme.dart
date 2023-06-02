@@ -36,19 +36,19 @@ TextStyle myDisplaySmall = const TextStyle(
 
 TextStyle myHeadlineLarge = const TextStyle(
   fontSize: 32,
-  fontWeight: FontWeight.w500,
+  fontWeight: FontWeight.w600,
   color: kFontColorDefault,
 );
 
 TextStyle myHeadlineMedium = const TextStyle(
   fontSize: 24,
-  fontWeight: FontWeight.w500,
+  fontWeight: FontWeight.w600,
   color: kFontColorDefault,
 );
 
 TextStyle myHeadlineSmall = const TextStyle(
   fontSize: 20,
-  fontWeight: FontWeight.w500,
+  fontWeight: FontWeight.w600,
   color: kFontColorDefault,
 );
 
