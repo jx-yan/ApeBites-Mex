@@ -75,21 +75,11 @@ class _HomeScreenState extends State<HomeScreen> {
               delegate: SliverChildListDelegate(
             <Widget>[
               // Total Sales Today Card
-              const Center(
-                child: SizedBox(
-                  height: 100,
-                  child: TotalSalesTodayCard(),
-                ),
-              ),
-              // Orders and Bags Number
-              const OrdersBagsNum(),
+              TotalSalesTodayCard(todaySales: 2000.00, ordersNum: 20, bagsNum: 30,),
               // Padding
-              const Padding(padding: EdgeInsets.only(top: 20)),
+              const Padding(padding: EdgeInsets.only(top: 15)),
               // HomeScreenButtons
-              const SizedBox(
-                height: 80,
-                child: HomeScreenButtons(),
-              ),
+              const HomeScreenButtons()
               // Padding
             ],
           )),
@@ -98,11 +88,15 @@ class _HomeScreenState extends State<HomeScreen> {
             pinned: true,
             snap: true,
             backgroundColor: Colors.white,
+            toolbarHeight: 50,
             flexibleSpace: FlexibleSpaceBar(
-              titlePadding: const EdgeInsets.only(left: 25, bottom: 15),
-              title: Text("Today's Reservations",
+              titlePadding: const EdgeInsets.only(left: 30, top: 25),
+              title: Align(
+                alignment: Alignment.centerLeft,
+                child: Text("Today's Reservations",
                   textAlign: TextAlign.left,
                   style: Theme.of(context).textTheme.headlineSmall),
+              ),
             ),
             automaticallyImplyLeading: false,
           ),
@@ -112,7 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
             (BuildContext context, int index) {
               return const ReservationListBar(isLargeOrder: true);
             },
-            childCount: 8,
+            childCount: 20,
           )),
           const SliverPadding(padding: EdgeInsets.only(top: 30)),
         ],

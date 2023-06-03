@@ -117,14 +117,14 @@ class _SalesScreenState extends State<SalesScreen> {
                 },
               ),
               ListView.builder(
-                padding: const EdgeInsets.only(left:10,bottom: 20),
+                padding: const EdgeInsets.only(bottom: 20),
                 itemCount: 20,
                 itemBuilder: (BuildContext context, int index) {
                   return PastReserveListBar(status: "completed");
                 },
               ),
               ListView.builder(
-                padding: const EdgeInsets.only(left:10, bottom: 20),
+                padding: const EdgeInsets.only(bottom: 20),
                 itemCount: 20,
                 itemBuilder: (BuildContext context, int index) {
                   return PastReserveListBar(status: "cancelled");

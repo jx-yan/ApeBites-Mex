@@ -15,7 +15,6 @@ class ReservationListBar extends StatelessWidget {
         height: 80,
         margin: const EdgeInsets.only(left: 25, right: 25, top: 15),
         decoration: customBoxDecoration(),
-        clipBehavior: Clip.hardEdge,
         child: Stack(
           children: [
             const Positioned(
@@ -77,7 +76,7 @@ class LargeOrderMarker extends StatelessWidget {
   @override
   Widget build(context) {
     return Positioned(
-        left: 350,
+      right: 0,
         child: Container(
           height: 30,
           width: 80,
