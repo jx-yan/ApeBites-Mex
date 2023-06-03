@@ -10,43 +10,43 @@ class HomeScreenButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-            width: 95,
-            margin: const EdgeInsets.only(right: 15),
-            decoration: customBoxDecoration(),
-            clipBehavior: Clip.hardEdge,
-            child: TextButton(
-              onPressed: () {},
-              child: const Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  HeroIcon(
-                    HeroIcons.arrowUpTray,
-                    size: 20,
-                    color: kPrimaryBoldest,
-                    style: HeroIconStyle.solid,
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text('Add Image',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          fontFamily: 'Lexend',
-                          fontSize: 11,
-                          fontWeight: FontWeight.w600,
-                          color: kFontColorDefault)),
-                ],
-              ),
-            )),
-        Container(
-          width: 95,
-          margin: const EdgeInsets.only(right: 15),
+    return Container(
+      margin: const EdgeInsets.only(left: 30, right: 30),
+      child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+        Expanded(
+            child: Container(
           decoration: customBoxDecoration(),
-          clipBehavior: Clip.hardEdge,
+          child: TextButton(
+            onPressed: () {},
+            child: const Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                HeroIcon(
+                  HeroIcons.arrowUpTray,
+                  size: 20,
+                  color: kPrimaryBoldest,
+                  style: HeroIconStyle.solid,
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Text('Add Image',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontFamily: 'Lexend',
+                        fontSize: 11,
+                        fontWeight: FontWeight.w600,
+                        color: kFontColorDefault)),
+              ],
+            ),
+          ),
+        )),
+        const SizedBox(
+          width: 10,
+        ),
+        Expanded(
+            child: Container(
+          decoration: customBoxDecoration(),
           child: TextButton(
               onPressed: () {},
               child: const Column(
@@ -70,12 +70,13 @@ class HomeScreenButtons extends StatelessWidget {
                           color: kFontColorDefault)),
                 ],
               )),
+        )),
+        const SizedBox(
+          width: 10,
         ),
-        Container(
-          width: 95,
-          margin: const EdgeInsets.only(right: 15),
+        Expanded(
+            child: Container(
           decoration: customBoxDecoration(),
-          clipBehavior: Clip.hardEdge,
           child: TextButton(
               onPressed: () => context.go('/home/reservations'),
               child: const Column(
@@ -99,36 +100,38 @@ class HomeScreenButtons extends StatelessWidget {
                           color: kFontColorDefault)),
                 ],
               )),
+        )),
+        const SizedBox(
+          width: 10,
         ),
-        Container(
-            width: 95,
-            margin: const EdgeInsets.only(right: 15),
-            decoration: customBoxDecoration(),
-            clipBehavior: Clip.hardEdge,
-            child: TextButton(
-                onPressed: () => {context.go('/home/sales')},
-                child: const Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    HeroIcon(
-                      HeroIcons.chartBarSquare,
-                      size: 20,
-                      color: kPrimaryBoldest,
-                      style: HeroIconStyle.solid,
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Text('Sales',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            fontFamily: 'Lexend',
-                            fontSize: 11,
-                            fontWeight: FontWeight.w600,
-                            color: kFontColorDefault)),
-                  ],
-                ))),
-      ],
+        Expanded(
+            child: Container(
+          decoration: customBoxDecoration(),
+          child: TextButton(
+              onPressed: () => context.go('/home/sales'),
+              child: const Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  HeroIcon(
+                    HeroIcons.chartBarSquare,
+                    size: 20,
+                    color: kPrimaryBoldest,
+                    style: HeroIconStyle.solid,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text('Sales',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontFamily: 'Lexend',
+                          fontSize: 11,
+                          fontWeight: FontWeight.w600,
+                          color: kFontColorDefault)),
+                ],
+              )),
+        )),
+      ]),
     );
   }
 }

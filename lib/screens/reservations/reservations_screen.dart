@@ -54,17 +54,16 @@ class _ReservationsScreenState extends State<ReservationsScreen> {
               toolbarHeight: 110,
               backgroundColor: Colors.white,
               leadingWidth: 70,
-              leading: Container(
-                  margin: const EdgeInsets.only(left: 25, top: 20),
-                  child: IconButton(
-                    onPressed: () => context.pop(),
-                    icon: const HeroIcon(
-                      HeroIcons.arrowLeft,
-                      style: HeroIconStyle.solid,
-                      color: kPrimaryBoldest,
-                      size: 24,
-                    ),
-                  )),
+              leading: Stack(children: [
+                Positioned(
+                    top: 15,
+                    left: 15,
+                    child: IconButton(
+                      onPressed: () => context.pop(),
+                      icon: const HeroIcon(HeroIcons.arrowLeft,
+                          color: kPrimaryBoldest, size: 24),
+                    ))
+              ]),
               flexibleSpace: const FlexibleSpaceBar(
                 centerTitle: true,
                 title: Text(
@@ -75,10 +74,10 @@ class _ReservationsScreenState extends State<ReservationsScreen> {
                       fontWeight: FontWeight.w600,
                       color: kPrimaryBoldest),
                 ),
-                titlePadding: EdgeInsets.only(bottom: 95),
+                titlePadding: EdgeInsets.only(bottom: 90),
               ),
               bottom: const PreferredSize(
-                  preferredSize: Size.fromHeight(40), child: SearchFilter()),
+                  preferredSize: Size.fromHeight(30), child: SearchFilter()),
             ),
             SliverList(
                 delegate: SliverChildListDelegate(
