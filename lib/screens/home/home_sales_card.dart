@@ -51,6 +51,7 @@ class TotalSalesTodayCard extends StatelessWidget {
                 const SizedBox(height: 10),
                 Row(
                   children: [
+                    const Spacer(flex: 1),
                     const SizedBox(width: 10),
                     Text('S\$', style: Theme.of(context).textTheme.bodyLarge),
                     const SizedBox(
@@ -69,14 +70,7 @@ class TotalSalesTodayCard extends StatelessWidget {
                             fontSize: 16,
                             fontWeight: FontWeight.w400,
                             color: Colors.green)),
-                    const Spacer(flex: 1),
-                    const HeroIcon(
-                      HeroIcons.chevronRight,
-                      size: 20,
-                      color: kPrimaryBoldest,
-                      style: HeroIconStyle.solid,
-                    ),
-                    const SizedBox(width: 10),
+                    const Spacer(flex: 5),
                   ],
                 ),
               ]),

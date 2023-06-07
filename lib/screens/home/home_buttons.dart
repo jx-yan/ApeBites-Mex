@@ -86,7 +86,7 @@ class _HomeScreenButtonsState extends State<HomeScreenButtons> {
               onPressed: () {
                 showModalBottomSheet<void>(
                   useSafeArea: true,
-                  backgroundColor: Colors.transparent.withOpacity(0),
+                  backgroundColor: Colors.white,
                   shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(16),
@@ -94,7 +94,7 @@ class _HomeScreenButtonsState extends State<HomeScreenButtons> {
                   ),
                   context: context,
                   builder: (BuildContext context) {
-                    return AddBagBottomSheetComponent();
+                    return const AddBagBottomSheetComponent();
                   },
                 );
               },

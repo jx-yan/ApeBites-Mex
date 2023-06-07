@@ -96,7 +96,7 @@ class _TimePickerButtonState extends State<TimePickerButton> {
                 ],
             ),
             const Spacer(),
-            const HeroIcon(HeroIcons.chevronRight, color: kPrimaryBoldest)
+            const HeroIcon(HeroIcons.chevronRight, color: kPrimaryBoldest, size: 16,)
           ],
         )
       ),

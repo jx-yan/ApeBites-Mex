@@ -66,7 +66,9 @@ class PastReserveListBar extends StatelessWidget {
         const Spacer(flex: 1),
         const HeroIcon(HeroIcons.chevronRight,
             color: kPrimaryBoldest, size: 24),
-        const SizedBox(width: 30),
+        const SizedBox(
+          width: 20,
+        ),
       ]),
     );
   }

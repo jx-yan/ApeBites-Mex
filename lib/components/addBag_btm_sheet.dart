@@ -21,12 +21,7 @@ class _AddBagBottomSheetComponentState
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(16), topRight: Radius.circular(16)), color: Colors.white),
-      child: OverflowBox(
-        child: Container(
-          margin: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
+          margin: const EdgeInsets.only(left: 20, right: 20, bottom: 30, top: 20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
@@ -74,7 +69,7 @@ class _AddBagBottomSheetComponentState
                       text: TextSpan(children: [
                         const TextSpan(
                             text:
-                                "By listing the stated items, you agree to ApeBites' \n",
+                                "By listing the stated items, you agree to ApeBites' ",
                             style: TextStyle(
                                 fontFamily: 'Lexend',
                                 fontSize: 14,
@@ -121,12 +116,10 @@ class _AddBagBottomSheetComponentState
                       ],
                     ),
                   )),
-              const SizedBox(height: 30),
+              const SizedBox(height: 50),
             ],
           ),
-        ),
-      ),
-    );
+        );
   }
 }
 
