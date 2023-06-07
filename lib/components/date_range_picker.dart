@@ -14,7 +14,7 @@ class DateRangePickerButton extends StatefulWidget {
 
 class _DateRangePickerButtonState extends State<DateRangePickerButton> {
   DateTimeRange? selectedDates = DateTimeRange(
-      start: DateTime.now(), end: DateTime.now());
+      start: DateTime.now().toLocal(), end: DateTime.now().toLocal());
 
   String get startDateString {
     return '${selectedDates!.start.day}/${selectedDates!.start.month}/${selectedDates!.start.year}';
@@ -22,16 +22,6 @@ class _DateRangePickerButtonState extends State<DateRangePickerButton> {
 
   String get endDateString {
     return '${selectedDates!.end.day}/${selectedDates!.end.month}/${selectedDates!.end.year}';
-  }
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
   }
 
   @override
@@ -75,14 +65,14 @@ class _DateRangePickerButtonState extends State<DateRangePickerButton> {
               ),
               Row(
                 children: [
-                  Text(selectedDates != null ? startDateString : "-",
+                  Text(selectedDates != null ? startDateString : "Select Date",
                       style: const TextStyle(
                           color: kPrimaryBoldest, fontSize: 16)),
                   const SizedBox(width: 10),
-                  const Text("to",
+                  const Text("-",
                       style: TextStyle(color: kPrimaryBoldest, fontSize: 14)),
                   const SizedBox(width: 10),
-                  Text(selectedDates != null ? endDateString : "-",
+                  Text(selectedDates != null ? endDateString : "Select Date",
                       style: const TextStyle(
                           color: kPrimaryBoldest, fontSize: 16)),
                 ],

@@ -3,8 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:apebites_mex/styles/styles.dart';
 import 'package:colorful_safe_area/colorful_safe_area.dart';
 import 'package:go_router/go_router.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:timezone/timezone.dart';
+import 'package:timezone/data/latest.dart' as tz;
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  tz.initializeTimeZones();
   runApp(const MyApp());
 }
 
@@ -47,6 +52,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('en', 'SG'),
+      ],
+      locale: const Locale('en', 'SG'),
       debugShowCheckedModeBanner: false,
       builder: (context, child) => ColorfulSafeArea(
           overflowRules: const OverflowRules.symmetric(vertical: true),
@@ -54,6 +67,7 @@ class MyApp extends StatelessWidget {
       title: _title,
       routerConfig: _router,
       theme: ThemeData(
+        useMaterial3: false,
         scaffoldBackgroundColor: Colors.white,
         primaryColor: kPrimaryDefault,
         primaryColorLight: kPrimarySoft,

@@ -39,6 +39,13 @@ dependencies:
   # add heroicons
   heroicons: ^0.8.0
   auto_size_text: ^3.0.0
+  time_range_picker: ^2.2.0
+
+  # add localization
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+  timezone: any
 
 
 dev_dependencies:

@@ -3,12 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:heroicons/heroicons.dart';
 import 'package:go_router/go_router.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:apebites_mex/components/components.dart';
 
-class HomeScreenButtons extends StatelessWidget {
+class HomeScreenButtons extends StatefulWidget {
   const HomeScreenButtons({
     super.key,
   });
 
+  @override
+  State<StatefulWidget> createState() => _HomeScreenButtonsState();
+}
+
+class _HomeScreenButtonsState extends State<HomeScreenButtons> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,10 +23,33 @@ class HomeScreenButtons extends StatelessWidget {
       child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
         Expanded(
             child: Container(
-              padding: const EdgeInsets.all(5),
           decoration: customBoxDecoration(),
           child: TextButton(
-            onPressed: () {},
+            clipBehavior: Clip.hardEdge,
+            onPressed: () {
+              showModalBottomSheet<void>(
+                useSafeArea: true,
+                context: context,
+                builder: (BuildContext context) {
+                  return SizedBox(
+                    height: 200,
+                    child: Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          const Text('Add Image Modal BottomSheet'),
+                          ElevatedButton(
+                            child: const Text('Close'),
+                            onPressed: () => Navigator.pop(context),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              );
+            },
             child: const Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -32,12 +61,13 @@ class HomeScreenButtons extends StatelessWidget {
                   style: HeroIconStyle.solid,
                 ),
                 Spacer(),
-                Text('Add Image',
-                    maxLines: 1,
+                AutoSizeText('Add Image',
+                    maxLines: 2,
+                    softWrap: true,
+                    maxFontSize: 12,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         fontFamily: 'Lexend',
-                        fontSize: 12,
                         fontWeight: FontWeight.w600,
                         color: kFontColorDefault)),
                 Spacer(),
@@ -52,7 +82,22 @@ class HomeScreenButtons extends StatelessWidget {
             child: Container(
           decoration: customBoxDecoration(),
           child: TextButton(
-              onPressed: () {},
+              clipBehavior: Clip.hardEdge,
+              onPressed: () {
+                showModalBottomSheet<void>(
+                  useSafeArea: true,
+                  backgroundColor: Colors.transparent.withOpacity(0),
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(16),
+                        topRight: Radius.circular(16)),
+                  ),
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AddBagBottomSheetComponent();
+                  },
+                );
+              },
               child: const Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -64,12 +109,13 @@ class HomeScreenButtons extends StatelessWidget {
                     style: HeroIconStyle.solid,
                   ),
                   Spacer(),
-                  Text('Add Bags',
-                  maxLines: 1,
+                  AutoSizeText('Add Bags',
+                      softWrap: true,
+                      maxLines: 2,
+                      maxFontSize: 12,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           fontFamily: 'Lexend',
-                          fontSize: 12,
                           fontWeight: FontWeight.w600,
                           color: kFontColorDefault)),
                   Spacer(),
@@ -83,6 +129,7 @@ class HomeScreenButtons extends StatelessWidget {
             child: Container(
           decoration: customBoxDecoration(),
           child: TextButton(
+              clipBehavior: Clip.hardEdge,
               onPressed: () => context.go('/home/reservations'),
               child: const Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -95,11 +142,11 @@ class HomeScreenButtons extends StatelessWidget {
                     style: HeroIconStyle.solid,
                   ),
                   Spacer(),
-                  Text('Reservations',
+                  AutoSizeText('Orders',
                       textAlign: TextAlign.center,
+                      maxFontSize: 12,
                       style: TextStyle(
                           fontFamily: 'Lexend',
-                          fontSize: 12,
                           fontWeight: FontWeight.w600,
                           color: kFontColorDefault)),
                   Spacer(),
@@ -113,6 +160,7 @@ class HomeScreenButtons extends StatelessWidget {
             child: Container(
           decoration: customBoxDecoration(),
           child: TextButton(
+              clipBehavior: Clip.hardEdge,
               onPressed: () => context.go('/home/sales'),
               child: const Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -125,11 +173,11 @@ class HomeScreenButtons extends StatelessWidget {
                     style: HeroIconStyle.solid,
                   ),
                   Spacer(),
-                  Text('Sales',
+                  AutoSizeText('Sales',
                       textAlign: TextAlign.center,
+                      maxFontSize: 12,
                       style: TextStyle(
                           fontFamily: 'Lexend',
-                          fontSize: 12,
                           fontWeight: FontWeight.w600,
                           color: kFontColorDefault)),
                   Spacer(),

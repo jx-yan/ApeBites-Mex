@@ -4,7 +4,8 @@ import 'package:heroicons/heroicons.dart';
 
 class ReservationListBar extends StatelessWidget {
   const ReservationListBar({
-    super.key, required this.isLargeOrder,
+    super.key,
+    required this.isLargeOrder,
   });
 
   final bool isLargeOrder;
@@ -52,17 +53,18 @@ class ReservationListBar extends StatelessWidget {
                           fontSize: 18,
                           color: kFontColorDefault),
                     ),
-                    SizedBox(
-                      width: 150,
-                    ),
-                    HeroIcon(
-                      HeroIcons.chevronRight,
-                      size: 20,
-                      color: kPrimaryBoldest,
-                      style: HeroIconStyle.solid,
-                    ),
                   ],
                 )),
+            const Positioned(
+              top: 40,
+              right: 15,
+              child: HeroIcon(
+                HeroIcons.chevronRight,
+                size: 20,
+                color: kPrimaryBoldest,
+                style: HeroIconStyle.solid,
+              ),
+            ),
           ],
         ));
   }
@@ -76,7 +78,7 @@ class LargeOrderMarker extends StatelessWidget {
   @override
   Widget build(context) {
     return Positioned(
-      right: 0,
+        right: 0,
         child: Container(
           height: 30,
           width: 80,

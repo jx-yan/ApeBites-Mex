@@ -6,9 +6,13 @@ class TotalSalesCard extends StatelessWidget {
   const TotalSalesCard({
     super.key,
     required this.totalSales,
+    required this.ordersNum,
+    required this.bagsNum,
   });
 
   final double totalSales;
+  final int ordersNum;
+  final int bagsNum;
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +70,7 @@ class TotalSalesCard extends StatelessWidget {
                 Expanded(
                     child: Container(
                   padding: const EdgeInsets.only(
-                      left: 30, right: 30, top: 12, bottom: 12),
+                      left: 30, right: 30, top: 10, bottom: 10),
                   decoration: customBoxDecoration(),
                   clipBehavior: Clip.hardEdge,
                   child: Row(
@@ -80,7 +84,7 @@ class TotalSalesCard extends StatelessWidget {
                             const SizedBox(
                               width: 10,
                             ),
-                            Text('10',
+                            Text(ordersNum.toString(),
                                 style: Theme.of(context).textTheme.titleMedium),
                           ],
                         ),
@@ -92,7 +96,7 @@ class TotalSalesCard extends StatelessWidget {
                 Expanded(
                   child: Container(
                   padding: const EdgeInsets.only(
-                      left: 30, right: 30, top: 12, bottom: 12),
+                      left: 30, right: 30, top: 10, bottom: 10),
                   decoration: customBoxDecoration(),
                   clipBehavior: Clip.hardEdge,
                   child: Row(
@@ -106,7 +110,7 @@ class TotalSalesCard extends StatelessWidget {
                             const SizedBox(
                               width: 10,
                             ),
-                            Text('10',
+                            Text(bagsNum.toString(),
                                 style: Theme.of(context).textTheme.titleMedium),
                           ],
                         ),

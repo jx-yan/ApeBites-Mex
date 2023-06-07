@@ -61,7 +61,7 @@ class _SalesScreenState extends State<SalesScreen> {
             ),
             centerTitle: true,
             bottom: PreferredSize(
-              preferredSize: const Size.fromHeight(270),
+              preferredSize: const Size.fromHeight(240),
               child: Container(
                 margin: const EdgeInsets.only(left: 0, right: 0),
                 child: Column(
@@ -71,34 +71,55 @@ class _SalesScreenState extends State<SalesScreen> {
                       child: const DateRangePickerButton(),
                     ),
                     const SizedBox(height: 10),
-                    const TotalSalesCard(totalSales: 500.00),
+                    const TotalSalesCard(totalSales: 500.00, ordersNum: 10, bagsNum: 20,),
                     const SizedBox(height: 10),
                     Container(
-                      margin: const EdgeInsets.only(left: 25, right: 25, bottom: 10),
+                      height: 40,
+                      margin: const EdgeInsets.only(
+                          left: 25, right: 25, bottom: 10),
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(16),
+                        borderRadius: BorderRadius.circular(12),
                         color: Colors.grey[200],
                       ),
                       child: TabBar(
-                        indicator: customBoxDecoration(),
-                        indicatorColor: Colors.white,
-                        indicatorWeight: 2,
-                        labelColor: kPrimaryBoldest,
-                        labelStyle: const TextStyle(
-                            fontFamily: 'Lexend',
-                            fontSize: 16,
-                            fontWeight: FontWeight.w400),
-                        tabs: const <Widget>[
-                          Tab(
-                            text: 'Reserved',
+                          indicator: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(12),
+                            boxShadow: [
+                              BoxShadow(
+                                color:
+                                    const Color(0xff141414).withOpacity(0.08),
+                                offset: const Offset(0, 0),
+                                blurRadius: 1,
+                              ),
+                              BoxShadow(
+                                color:
+                                    const Color(0xff141414).withOpacity(0.08),
+                                offset: const Offset(0, 1),
+                                blurRadius: 8,
+                                spreadRadius: 2,
+                              ),
+                            ],
                           ),
-                          Tab(
-                            text: 'Completed',
-                          ),
-                          Tab(
-                            text: 'Cancelled',
-                          ),
-                        ]),
+                          indicatorPadding: const EdgeInsets.all(3),
+                          indicatorColor: Colors.white,
+                          indicatorWeight: 3,
+                          labelColor: kPrimaryBoldest,
+                          labelStyle: const TextStyle(
+                              fontFamily: 'Lexend',
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400),
+                          tabs: const <Widget>[
+                            Tab(
+                              text: 'Reserved',
+                            ),
+                            Tab(
+                              text: 'Completed',
+                            ),
+                            Tab(
+                              text: 'Cancelled',
+                            ),
+                          ]),
                     ),
                   ],
                 ),

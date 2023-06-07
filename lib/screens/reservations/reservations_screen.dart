@@ -121,7 +121,7 @@ class _ReservationsScreenState extends State<ReservationsScreen> {
               },
               childCount: 5,
             )),
-            const SliverPadding(padding: EdgeInsets.only(top: 10)),
+            const SliverPadding(padding: EdgeInsets.only(top: 20)),
             SliverList(
                 delegate: SliverChildListDelegate(
               <Widget>[
@@ -164,6 +164,7 @@ class _ReservationsScreenState extends State<ReservationsScreen> {
               },
               childCount: 5,
             )),
+            const SliverPadding(padding: EdgeInsets.only(top: 10)),
             SliverList(
                 delegate: SliverChildListDelegate(
               <Widget>[
