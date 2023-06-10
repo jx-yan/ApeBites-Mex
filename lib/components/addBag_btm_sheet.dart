@@ -21,9 +21,10 @@ class _AddBagBottomSheetComponentState
   @override
   Widget build(BuildContext context) {
     return Container(
-          margin: const EdgeInsets.only(left: 20, right: 20, bottom: 30, top: 20),
+          margin: const EdgeInsets.only(left: 20, right: 20, bottom: 80, top: 20),
+          height: 600,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
@@ -58,7 +59,7 @@ class _AddBagBottomSheetComponentState
                       style: TextStyle(
                           fontFamily: 'Lexend',
                           fontSize: 16,
-                          fontWeight: FontWeight.w600,
+                          fontWeight: FontWeight.w500,
                           color: kPrimaryBoldest)),
                   const SizedBox(height: 10),
                   const TimePickerButton(),
@@ -116,7 +117,6 @@ class _AddBagBottomSheetComponentState
                       ],
                     ),
                   )),
-              const SizedBox(height: 50),
             ],
           ),
         );
@@ -143,7 +143,7 @@ class _EditQuantityBoxState extends State<EditQuantityBox> {
                 style: TextStyle(
                     fontFamily: 'Lexend',
                     fontSize: 16,
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.w500,
                     color: kPrimaryBoldest)),
           ),
           const SizedBox(height: 10),

@@ -33,7 +33,7 @@ class _SalesScreenState extends State<SalesScreen> {
         length: 3,
         child: Scaffold(
           appBar: AppBar(
-            toolbarHeight: 50,
+            toolbarHeight: 60,
             backgroundColor: Colors.white,
             elevation: 0,
             scrolledUnderElevation: 5,
@@ -49,7 +49,7 @@ class _SalesScreenState extends State<SalesScreen> {
                   ))
             ]),
             title: Container(
-              margin: const EdgeInsets.only(top: 25),
+              margin: const EdgeInsets.only(top: 30, bottom: 15),
               child: const Text(
                 'Sales',
                 style: TextStyle(
@@ -61,7 +61,7 @@ class _SalesScreenState extends State<SalesScreen> {
             ),
             centerTitle: true,
             bottom: PreferredSize(
-              preferredSize: const Size.fromHeight(240),
+              preferredSize: const Size.fromHeight(230),
               child: Container(
                 margin: const EdgeInsets.only(left: 0, right: 0),
                 child: Column(
@@ -71,12 +71,13 @@ class _SalesScreenState extends State<SalesScreen> {
                       child: const DateRangePickerButton(),
                     ),
                     const SizedBox(height: 10),
-                    const TotalSalesCard(totalSales: 500.00, ordersNum: 10, bagsNum: 20,),
+                    const TotalSalesCard(
+                        totalSales: 500.00, ordersNum: 10, bagsNum: 20),
                     const SizedBox(height: 10),
                     Container(
-                      height: 40,
-                      margin: const EdgeInsets.only(
-                          left: 25, right: 25, bottom: 10),
+                      height: 45,
+                      margin:
+                          const EdgeInsets.only(left: 25, right: 25, bottom: 5),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         color: Colors.grey[200],
@@ -132,23 +133,34 @@ class _SalesScreenState extends State<SalesScreen> {
                 padding: const EdgeInsets.only(bottom: 20),
                 itemCount: 20,
                 itemBuilder: (BuildContext context, int index) {
-                  return const ReservationListBar(
-                    isLargeOrder: true,
-                  );
+                  return ReservationListBar(
+                      isLargeOrder: true,
+                      orderNumber: "AB-123434",
+                      orderTotal: 3.99,
+                      orderDateTime: DateTime.now(),
+                      bagsNum: 1);
                 },
               ),
               ListView.builder(
                 padding: const EdgeInsets.only(bottom: 20),
                 itemCount: 20,
                 itemBuilder: (BuildContext context, int index) {
-                  return PastReserveListBar(status: "completed");
+                  return PastReserveListBar(
+                      status: "completed",
+                      orderNumber: "AB-22443",
+                      orderDateTime: DateTime.now(),
+                      orderTotal: 5.99);
                 },
               ),
               ListView.builder(
                 padding: const EdgeInsets.only(bottom: 20),
                 itemCount: 20,
                 itemBuilder: (BuildContext context, int index) {
-                  return PastReserveListBar(status: "cancelled");
+                  return PastReserveListBar(
+                      status: "cancelled",
+                      orderNumber: "AB-22443",
+                      orderDateTime: DateTime.now(),
+                      orderTotal: 5.99);
                 },
               ),
             ],

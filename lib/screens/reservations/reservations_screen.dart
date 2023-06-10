@@ -38,6 +38,7 @@ class _ReservationsScreenState extends State<ReservationsScreen> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        // To dismiss keyboard when user taps outside of textfield
         FocusScopeNode currentFocus = FocusScope.of(context);
         if (!currentFocus.hasPrimaryFocus &&
             currentFocus.focusedChild != null) {
@@ -91,10 +92,11 @@ class _ReservationsScreenState extends State<ReservationsScreen> {
                         textAlign: TextAlign.left,
                         style: Theme.of(context).textTheme.headlineSmall),
                     const Spacer(flex: 1),
-                    const TextButton(
-                      onPressed: null,
+                    TextButton(
+                      onPressed: () =>
+                          context.go('/home/reservations/to-prepare'),
                       clipBehavior: Clip.hardEdge,
-                      child: Row(
+                      child: const Row(
                         children: [
                           Text("View All",
                               textAlign: TextAlign.right,
@@ -117,7 +119,12 @@ class _ReservationsScreenState extends State<ReservationsScreen> {
             SliverList(
                 delegate: SliverChildBuilderDelegate(
               (BuildContext context, int index) {
-                return const ReservationListBar(isLargeOrder: false,);
+                return ReservationListBar(
+                    isLargeOrder: false,
+                    orderNumber: "AB-123434",
+                    orderTotal: 3.99,
+                    orderDateTime: DateTime.now(),
+                    bagsNum: 1);
               },
               childCount: 5,
             )),
@@ -134,10 +141,11 @@ class _ReservationsScreenState extends State<ReservationsScreen> {
                         textAlign: TextAlign.left,
                         style: Theme.of(context).textTheme.headlineSmall),
                     const Spacer(flex: 1),
-                    const TextButton(
-                      onPressed: null,
+                    TextButton(
+                      onPressed: () =>
+                          context.go('/home/reservations/completed'),
                       clipBehavior: Clip.hardEdge,
-                      child: Row(
+                      child: const Row(
                         children: [
                           Text("View All",
                               textAlign: TextAlign.right,
@@ -160,7 +168,11 @@ class _ReservationsScreenState extends State<ReservationsScreen> {
             SliverList(
                 delegate: SliverChildBuilderDelegate(
               (BuildContext context, int index) {
-                return PastReserveListBar(status: "completed");
+                return PastReserveListBar(
+                    status: "completed",
+                    orderNumber: "AB-22443",
+                    orderDateTime: DateTime.now(),
+                    orderTotal: 5.99);
               },
               childCount: 5,
             )),
@@ -178,10 +190,11 @@ class _ReservationsScreenState extends State<ReservationsScreen> {
                         textAlign: TextAlign.left,
                         style: Theme.of(context).textTheme.headlineSmall),
                     const Spacer(flex: 1),
-                    const TextButton(
-                      onPressed: null,
+                    TextButton(
+                      onPressed: () =>
+                          context.go('/home/reservations/cancelled'),
                       clipBehavior: Clip.hardEdge,
-                      child: Row(
+                      child: const Row(
                         children: [
                           Text("View All",
                               textAlign: TextAlign.right,
@@ -204,7 +217,11 @@ class _ReservationsScreenState extends State<ReservationsScreen> {
             SliverList(
                 delegate: SliverChildBuilderDelegate(
               (BuildContext context, int index) {
-                return PastReserveListBar(status: "cancelled");
+                return PastReserveListBar(
+                    status: "cancelled",
+                    orderNumber: "AB-22443",
+                    orderDateTime: DateTime.now(),
+                    orderTotal: 5.99);
               },
               childCount: 5,
             )),

@@ -15,18 +15,18 @@ class SearchFilter extends StatelessWidget {
           Expanded(
             child: TextField(
               style: const TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w500,
+                fontSize: 16,
+                fontWeight: FontWeight.w400,
               ),
               textAlignVertical: TextAlignVertical.center,
               decoration: InputDecoration(
                 isDense: true,
                 contentPadding: EdgeInsets.zero,
-                hintText: "Search",
+                hintText: "Search Reservations",
                 //set text size 14
                 hintStyle: const TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w500,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
                 ),
                 prefixIcon: const Icon(
                   Icons.search,
@@ -46,29 +46,30 @@ class SearchFilter extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(
-            width: 10,
-          ),
-          Container(
-            height: 50,
-            width: 50,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(8),
-              border: Border.all(
-                color: kBorderColorDefault,
-                width: 1,
-              ),
-            ),
-            child: const IconButton(
-              onPressed: null,
-              icon: HeroIcon(
-                HeroIcons.adjustmentsHorizontal,
-                size: 24,
-                color: kPrimaryBoldest,
-              ),
-            ),
-          ),
+          // filter button is not needed for now
+          // const SizedBox(
+          //   width: 10,
+          // ),
+          // Container(
+          //   height: 50,
+          //   width: 50,
+          //   decoration: BoxDecoration(
+          //     color: Colors.white,
+          //     borderRadius: BorderRadius.circular(8),
+          //     border: Border.all(
+          //       color: kBorderColorDefault,
+          //       width: 1,
+          //     ),
+          //   ),
+          //   child: const IconButton(
+          //     onPressed: null,
+          //     icon: HeroIcon(
+          //       HeroIcons.adjustmentsHorizontal,
+          //       size: 24,
+          //       color: kPrimaryBoldest,
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );

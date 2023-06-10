@@ -49,7 +49,7 @@ class ContinueWithGoogleButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(48),
             ),
             padding: const EdgeInsets.all(15.0),
-            backgroundColor: kPrimaryDefault,
+            backgroundColor: kPrimaryBoldest,
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,

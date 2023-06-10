@@ -16,8 +16,8 @@ class TimePickerButton extends StatefulWidget {
 
 class _TimePickerButtonState extends State<TimePickerButton> {
   final TimeOfDay _startTime = TimeOfDay.fromDateTime(DateTime.now().toLocal());
-  final TimeOfDay _endTime =
-      TimeOfDay.fromDateTime(DateTime.now().toLocal().add(const Duration(hours: 1)));
+  final TimeOfDay _endTime = TimeOfDay.fromDateTime(
+      DateTime.now().toLocal().add(const Duration(hours: 1)));
 
   String get startTimeString {
     return _startTime.format(context);
@@ -66,7 +66,7 @@ class _TimePickerButtonState extends State<TimePickerButton> {
             ].asMap().entries.map((e) {
               return ClockLabel.fromIndex(idx: e.key, length: 8, text: e.value);
             }).toList(),
-            labelOffset: 35,
+            labelOffset: 20,
             rotateLabels: false,
             padding: 60);
 
@@ -75,31 +75,41 @@ class _TimePickerButtonState extends State<TimePickerButton> {
         }
       },
       child: Container(
-        padding: const EdgeInsets.all(15),
-        alignment: Alignment.center,
-        child: Row(
-          children: [
-            const Spacer(),
-            Row(
+          padding: const EdgeInsets.all(15),
+          alignment: Alignment.center,
+          child: Row(
+            children: [
+              const Spacer(),
+              Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(startTimeString,
                       style: const TextStyle(
-                          color: kPrimaryBoldest, fontSize: 16)),
+                          color: kPrimaryBoldest,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400)),
                   const SizedBox(width: 10),
                   const Text("-",
-                      style: TextStyle(color: kPrimaryBoldest, fontSize: 16)),
+                      style: TextStyle(
+                          color: kPrimaryBoldest,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400)),
                   const SizedBox(width: 10),
                   Text(endTimeString,
                       style: const TextStyle(
-                          color: kPrimaryBoldest, fontSize: 16)),
+                          color: kPrimaryBoldest,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400)),
                 ],
-            ),
-            const Spacer(),
-            const HeroIcon(HeroIcons.chevronRight, color: kPrimaryBoldest, size: 16,)
-          ],
-        )
-      ),
+              ),
+              const Spacer(),
+              const HeroIcon(
+                HeroIcons.chevronRight,
+                color: kPrimaryBoldest,
+                size: 16,
+              )
+            ],
+          )),
     );
   }
 }

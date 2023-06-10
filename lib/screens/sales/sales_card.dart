@@ -21,7 +21,7 @@ class TotalSalesCard extends StatelessWidget {
         Container(
           margin: const EdgeInsets.only(left: 25, right: 25),
           padding:
-              const EdgeInsets.only(left: 30, right: 30, top: 15, bottom: 15),
+              const EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
           decoration: customBoxDecoration(),
           clipBehavior: Clip.hardEdge,
           child:

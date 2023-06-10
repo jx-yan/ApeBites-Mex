@@ -4,12 +4,8 @@ import 'package:apebites_mex/styles/styles.dart';
 import 'package:colorful_safe_area/colorful_safe_area.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:timezone/timezone.dart';
-import 'package:timezone/data/latest.dart' as tz;
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  tz.initializeTimeZones();
   runApp(const MyApp());
 }
 
@@ -32,6 +28,26 @@ final GoRouter _router = GoRouter(
                 builder: (BuildContext context, GoRouterState state) {
                   return const ReservationsScreen();
                 },
+                routes: [
+                  GoRoute(
+                    path: 'to-prepare',
+                    builder: (BuildContext context, GoRouterState state) {
+                      return const ToPrepReserveScreen();
+                    },
+                  ),
+                  GoRoute(
+                    path: 'completed',
+                    builder: (BuildContext context, GoRouterState state) {
+                      return const CompletedReserveScreen();
+                    },
+                  ),
+                  GoRoute(
+                    path: 'cancelled',
+                    builder: (BuildContext context, GoRouterState state) {
+                      return const CancelledReserveScreen();
+                    },
+                  ),
+                ],
               ),
               GoRoute(
                 path: 'sales',
@@ -39,6 +55,14 @@ final GoRouter _router = GoRouter(
                   return const SalesScreen();
                 },
               ),
+              GoRoute(
+                path: 'receipt/:orderNumber',
+                builder: (BuildContext context, GoRouterState state) {
+                  return ReceiptScreen(
+                    orderNumber: state.pathParameters['orderNumber']!,
+                  );
+                },
+              )
             ]),
       ],
     ),

@@ -1,14 +1,39 @@
 import 'package:apebites_mex/styles/styles.dart';
 import 'package:flutter/material.dart';
-import 'package:heroicons/heroicons.dart';
+import 'package:apebites_mex/screens/home/receipt_screen.dart';
+import 'package:intl/intl.dart';
 
 class ReservationListBar extends StatelessWidget {
   const ReservationListBar({
     super.key,
-    required this.isLargeOrder,
+    required this.orderNumber,
+    required this.orderDateTime,
+    required this.orderTotal,
+    required this.bagsNum,
+    this.isLargeOrder,
   });
 
-  final bool isLargeOrder;
+  final bool? isLargeOrder;
+  final String orderNumber;
+  final DateTime orderDateTime;
+  final int bagsNum;
+  final double orderTotal;
+
+  String formattedOrderTotal() {
+    return "\$${orderTotal.toStringAsFixed(2)}";
+  }
+
+  String formattedOrderMonth() {
+    return DateFormat.yMMM().format(orderDateTime);
+  }
+
+  String formattedOrderHourMins() {
+    return DateFormat.jm().format(orderDateTime);
+  }
+
+  String get orderTimeString {
+    return '${orderDateTime.day} ${formattedOrderMonth()}, ${formattedOrderHourMins()}';
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,56 +41,83 @@ class ReservationListBar extends StatelessWidget {
         height: 80,
         margin: const EdgeInsets.only(left: 25, right: 25, top: 15),
         decoration: customBoxDecoration(),
-        child: Stack(
-          children: [
-            const Positioned(
-                top: 15,
-                left: 15,
-                child: Text(
-                  'Today, 21:40',
-                  style: TextStyle(
-                      fontFamily: 'Lexend',
-                      fontWeight: FontWeight.w400,
-                      color: kPrimaryBoldest),
-                )),
-            if (isLargeOrder) const LargeOrderMarker(),
-            const Positioned(
-                top: 40,
-                left: 15,
-                child: Row(
-                  children: [
-                    Text(
-                      'AB-123456',
-                      style: TextStyle(
-                          fontFamily: 'Lexend',
-                          fontWeight: FontWeight.w500,
-                          fontSize: 18,
-                          color: kFontColorDefault),
-                    ),
-                    SizedBox(
-                      width: 40,
-                    ),
-                    Text(
-                      '2 x Bags',
-                      style: TextStyle(
-                          fontFamily: 'Lexend',
-                          fontWeight: FontWeight.w700,
-                          fontSize: 18,
-                          color: kFontColorDefault),
-                    ),
-                  ],
-                )),
-            const Positioned(
-              top: 40,
-              right: 15,
-              child: HeroIcon(
-                HeroIcons.chevronRight,
-                size: 20,
-                color: kPrimaryBoldest,
-                style: HeroIconStyle.solid,
-              ),
+        child: TextButton(
+          onPressed: () => Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (BuildContext context) {
+                return ReceiptScreen(
+                  orderNumber: orderNumber,
+                );
+              },
             ),
-          ],
+          ),
+          style: TextButton.styleFrom(
+            padding: const EdgeInsets.all(0),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
+            ),
+          ),
+          child: Stack(
+            children: [
+              Positioned(
+                  top: 15,
+                  left: 15,
+                  child: Text(
+                    orderTimeString,
+                    style: const TextStyle(
+                        fontFamily: 'Lexend',
+                        fontWeight: FontWeight.w300,
+                        color: kPrimaryBoldest),
+                  )),
+              if (isLargeOrder == true) const LargeOrderMarker(),
+              Positioned(
+                  top: 40,
+                  left: 15,
+                  child: Row(
+                    children: [
+                      Text(
+                        orderNumber,
+                        style: const TextStyle(
+                            fontFamily: 'Lexend',
+                            fontWeight: FontWeight.w400,
+                            fontSize: 18,
+                            color: kFontColorDefault),
+                      ),
+                      const SizedBox(width: 80),
+                      RichText(
+                        text: TextSpan(
+                          text: '$bagsNum',
+                          style: const TextStyle(
+                              fontFamily: 'Lexend',
+                              fontWeight: FontWeight.w700,
+                              fontSize: 18,
+                              color: kFontColorDefault),
+                          children: const <TextSpan>[
+                            TextSpan(
+                                text: ' Bags',
+                                style: TextStyle(
+                                    fontFamily: 'Lexend',
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 18,
+                                    color: kFontColorDefault)),
+                          ],
+                        ),
+                      ),
+                    ],
+                  )),
+              Positioned(
+                  top: 40,
+                  right: 15,
+                  child: Text(
+                    formattedOrderTotal(),
+                    style: const TextStyle(
+                        fontFamily: 'Lexend',
+                        fontWeight: FontWeight.w700,
+                        fontSize: 20,
+                        color: kFontColorDefault),
+                  )),
+            ],
+          ),
         ));
   }
 }

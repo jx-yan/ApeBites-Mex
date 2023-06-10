@@ -2,4 +2,8 @@ export 'login_screen.dart';
 export 'otp_screen.dart';
 export 'home/home_screen.dart';
 export 'reservations/reservations_screen.dart';
+export 'reservations/toprep_reserve.dart';
+export 'reservations/completed_reserve.dart';
+export 'reservations/cancelled_reserve.dart';
+export 'home/receipt_screen.dart';
 export 'sales/sales_screen.dart';

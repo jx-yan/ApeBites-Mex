@@ -26,6 +26,12 @@ class _HomeScreenButtonsState extends State<HomeScreenButtons> {
           decoration: customBoxDecoration(),
           child: TextButton(
             clipBehavior: Clip.hardEdge,
+            style: TextButton.styleFrom(
+              padding: const EdgeInsets.all(0),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
+            ),
             onPressed: () {
               showModalBottomSheet<void>(
                 useSafeArea: true,
@@ -60,7 +66,9 @@ class _HomeScreenButtonsState extends State<HomeScreenButtons> {
                   color: kPrimaryBoldest,
                   style: HeroIconStyle.solid,
                 ),
-                Spacer(),
+                SizedBox(
+                  height: 8,
+                ),
                 AutoSizeText('Add Image',
                     maxLines: 2,
                     softWrap: true,
@@ -68,7 +76,7 @@ class _HomeScreenButtonsState extends State<HomeScreenButtons> {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         fontFamily: 'Lexend',
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w500,
                         color: kFontColorDefault)),
                 Spacer(),
               ],
@@ -83,6 +91,12 @@ class _HomeScreenButtonsState extends State<HomeScreenButtons> {
           decoration: customBoxDecoration(),
           child: TextButton(
               clipBehavior: Clip.hardEdge,
+              style: TextButton.styleFrom(
+                padding: const EdgeInsets.all(0),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16),
+                ),
+              ),
               onPressed: () {
                 showModalBottomSheet<void>(
                   useSafeArea: true,
@@ -108,7 +122,9 @@ class _HomeScreenButtonsState extends State<HomeScreenButtons> {
                     color: kPrimaryBoldest,
                     style: HeroIconStyle.solid,
                   ),
-                  Spacer(),
+                  SizedBox(
+                    height: 8,
+                  ),
                   AutoSizeText('Add Bags',
                       softWrap: true,
                       maxLines: 2,
@@ -116,7 +132,7 @@ class _HomeScreenButtonsState extends State<HomeScreenButtons> {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           fontFamily: 'Lexend',
-                          fontWeight: FontWeight.w600,
+                          fontWeight: FontWeight.w500,
                           color: kFontColorDefault)),
                   Spacer(),
                 ],
@@ -130,6 +146,12 @@ class _HomeScreenButtonsState extends State<HomeScreenButtons> {
           decoration: customBoxDecoration(),
           child: TextButton(
               clipBehavior: Clip.hardEdge,
+              style: TextButton.styleFrom(
+                padding: const EdgeInsets.all(0),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16),
+                ),
+              ),
               onPressed: () => context.go('/home/reservations'),
               child: const Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -141,13 +163,15 @@ class _HomeScreenButtonsState extends State<HomeScreenButtons> {
                     color: kPrimaryBoldest,
                     style: HeroIconStyle.solid,
                   ),
-                  Spacer(),
+                  SizedBox(
+                    height: 8,
+                  ),
                   AutoSizeText('Orders',
                       textAlign: TextAlign.center,
                       maxFontSize: 12,
                       style: TextStyle(
                           fontFamily: 'Lexend',
-                          fontWeight: FontWeight.w600,
+                          fontWeight: FontWeight.w500,
                           color: kFontColorDefault)),
                   Spacer(),
                 ],
@@ -161,6 +185,12 @@ class _HomeScreenButtonsState extends State<HomeScreenButtons> {
           decoration: customBoxDecoration(),
           child: TextButton(
               clipBehavior: Clip.hardEdge,
+              style: TextButton.styleFrom(
+                padding: const EdgeInsets.all(0),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16),
+                ),
+              ),
               onPressed: () => context.go('/home/sales'),
               child: const Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -172,13 +202,15 @@ class _HomeScreenButtonsState extends State<HomeScreenButtons> {
                     color: kPrimaryBoldest,
                     style: HeroIconStyle.solid,
                   ),
-                  Spacer(),
+                  SizedBox(
+                    height: 8,
+                  ),
                   AutoSizeText('Sales',
                       textAlign: TextAlign.center,
                       maxFontSize: 12,
                       style: TextStyle(
                           fontFamily: 'Lexend',
-                          fontWeight: FontWeight.w600,
+                          fontWeight: FontWeight.w500,
                           color: kFontColorDefault)),
                   Spacer(),
                 ],

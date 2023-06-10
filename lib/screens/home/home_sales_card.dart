@@ -17,7 +17,7 @@ class TotalSalesTodayCard extends StatelessWidget {
   static const TextStyle ordersBagsNumStyle = TextStyle(
       fontFamily: 'Lexend',
       fontSize: 12,
-      fontWeight: FontWeight.w600,
+      fontWeight: FontWeight.w400,
       color: kFontColorDefault);
 
 

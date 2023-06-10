@@ -5,8 +5,6 @@ import 'package:apebites_mex/components/components.dart';
 import 'package:apebites_mex/screens/home/home_sales_card.dart';
 import 'package:apebites_mex/screens/home/home_buttons.dart';
 
-String _shopName = 'BreadTalk @ Tampines Mall';
-
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -15,6 +13,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final String _shopName = 'BreadTalk @ Tampines Mall';
   final ScrollController _scrollController = ScrollController();
   bool _isVisible = true;
 
@@ -104,7 +103,7 @@ class _HomeScreenState extends State<HomeScreen> {
               // reservation
               delegate: SliverChildBuilderDelegate(
             (BuildContext context, int index) {
-              return const ReservationListBar(isLargeOrder: true);
+              return ReservationListBar(orderNumber: "AB-123434", orderTotal: 3.99, orderDateTime: DateTime.now(), bagsNum: 1);
             },
             childCount: 20,
           )),
