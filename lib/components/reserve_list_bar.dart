@@ -42,92 +42,94 @@ class ReservationListBar extends StatelessWidget {
         margin: const EdgeInsets.only(left: 25, right: 25, top: 15),
         decoration: customBoxDecoration(),
         child: TextButton(
-          onPressed: () => Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (BuildContext context) {
-                return ReceiptScreen(
-                  orderNumber: orderNumber,
-                );
-              },
+            onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return ReceiptScreen(
+                        orderNumber: orderNumber,
+                      );
+                    },
+                  ),
+                ),
+            style: TextButton.styleFrom(
+              padding: const EdgeInsets.all(0),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
             ),
-          ),
-          style: TextButton.styleFrom(
-            padding: const EdgeInsets.all(0),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16),
-            ),
-          ),
-          child: Stack(
-            children: [
-              Positioned(
-                  top: 15,
-                  left: 15,
-                  child: Text(
-                    orderTimeString,
-                    style: const TextStyle(
-                        fontFamily: 'Lexend',
-                        fontWeight: FontWeight.w300,
-                        color: kPrimaryBoldest),
-                  )),
-              if (isLargeOrder == true) const LargeOrderMarker(),
-              Positioned(
-                  top: 40,
-                  left: 15,
-                  child: Row(
+            child: Stack(
+              children: [
+                if (isLargeOrder == true) const LargeOrderMarker(),
+                Container(
+                  margin: const EdgeInsets.all(15),
+                  child: Column(
                     children: [
-                      Text(
-                        orderNumber,
-                        style: const TextStyle(
-                            fontFamily: 'Lexend',
-                            fontWeight: FontWeight.w400,
-                            fontSize: 18,
-                            color: kFontColorDefault),
-                      ),
-                      const SizedBox(width: 80),
-                      RichText(
-                        text: TextSpan(
-                          text: '$bagsNum',
+                      Row(children: [
+                        Text(
+                          orderTimeString,
                           style: const TextStyle(
                               fontFamily: 'Lexend',
-                              fontWeight: FontWeight.w700,
-                              fontSize: 18,
-                              color: kFontColorDefault),
-                          children: <TextSpan>[
-                            if (bagsNum == 1)
-                              const TextSpan(
-                                  text: ' Bag',
-                                  style: TextStyle(
-                                      fontFamily: 'Lexend',
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 18,
-                                      color: kFontColorDefault))
-                            else
-                              const TextSpan(
-                                  text: ' Bags',
-                                  style: TextStyle(
-                                      fontFamily: 'Lexend',
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 18,
-                                      color: kFontColorDefault)),
-                          ],
+                              fontWeight: FontWeight.w300,
+                              color: kPrimaryBoldest),
                         ),
+                        const Spacer(),
+                      ]),
+                      const Spacer(),
+                      Row(
+                        children: [
+                          Text(
+                            orderNumber,
+                            style: const TextStyle(
+                                fontFamily: 'Lexend',
+                                fontWeight: FontWeight.w400,
+                                fontSize: 18,
+                                color: kFontColorDefault),
+                          ),
+                          const Spacer(),
+                          RichText(
+                            text: TextSpan(
+                              text: '$bagsNum',
+                              style: const TextStyle(
+                                  fontFamily: 'Lexend',
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 18,
+                                  color: kFontColorDefault),
+                              children: <TextSpan>[
+                                if (bagsNum == 1)
+                                  const TextSpan(
+                                      text: ' Bag',
+                                      style: TextStyle(
+                                          fontFamily: 'Lexend',
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 18,
+                                          color: kFontColorDefault))
+                                else
+                                  const TextSpan(
+                                      text: ' Bags',
+                                      style: TextStyle(
+                                          fontFamily: 'Lexend',
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 18,
+                                          color: kFontColorDefault)),
+                              ],
+                            ),
+                          ),
+                          const Spacer(),
+                          Text(
+                            formattedOrderTotal(),
+                            style: const TextStyle(
+                                fontFamily: 'Lexend',
+                                fontWeight: FontWeight.w700,
+                                fontSize: 20,
+                                color: kFontColorDefault),
+                          )
+                        ],
                       ),
                     ],
-                  )),
-              Positioned(
-                  top: 40,
-                  right: 15,
-                  child: Text(
-                    formattedOrderTotal(),
-                    style: const TextStyle(
-                        fontFamily: 'Lexend',
-                        fontWeight: FontWeight.w700,
-                        fontSize: 20,
-                        color: kFontColorDefault),
-                  )),
-            ],
-          ),
-        ));
+                  ),
+                )
+              ],
+            )));
   }
 }
 
@@ -141,7 +143,7 @@ class LargeOrderMarker extends StatelessWidget {
     return Positioned(
         right: 0,
         child: Container(
-          height: 30,
+          height: 25,
           width: 80,
           decoration: const BoxDecoration(
               color: Color.fromRGBO(240, 152, 0, 1),

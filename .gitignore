@@ -139,7 +139,11 @@ app.*.symbols
 !.vscode/settings.json
 .vscode/settings.json
 android/local.properties
-.gitignore
 android/.gradle/7.5/fileHashes/fileHashes.lock
-.gitignore
+android/.gradle/buildOutputCleanup/outputFiles.bin
+android/local.properties
+android/.gradle/7.5/executionHistory/executionHistory.bin
+android/.gradle/7.5/executionHistory/executionHistory.lock
+android/.gradle/7.5/fileHashes/fileHashes.bin
+android/.gradle/7.5/fileHashes/resourceHashesCache.bin
 android/.gradle/buildOutputCleanup/outputFiles.bin

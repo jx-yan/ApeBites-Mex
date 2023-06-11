@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:heroicons/heroicons.dart';
 
 class TotalSalesTodayCard extends StatelessWidget {
-  TotalSalesTodayCard({
+  const TotalSalesTodayCard({
     super.key,
     required this.todaySales,
     required this.ordersNum,

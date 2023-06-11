@@ -64,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
               delegate: SliverChildListDelegate(
             <Widget>[
               // Total Sales Today Card
-              TotalSalesTodayCard(todaySales: 2000.00, ordersNum: 20, bagsNum: 30,),
+              const TotalSalesTodayCard(todaySales: 2000.00, ordersNum: 20, bagsNum: 30,),
               // Padding
               const Padding(padding: EdgeInsets.only(top: 15)),
               // HomeScreenButtons
