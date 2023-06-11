@@ -92,14 +92,23 @@ class ReservationListBar extends StatelessWidget {
                               fontWeight: FontWeight.w700,
                               fontSize: 18,
                               color: kFontColorDefault),
-                          children: const <TextSpan>[
-                            TextSpan(
-                                text: ' Bags',
-                                style: TextStyle(
-                                    fontFamily: 'Lexend',
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 18,
-                                    color: kFontColorDefault)),
+                          children: <TextSpan>[
+                            if (bagsNum == 1)
+                              const TextSpan(
+                                  text: ' Bag',
+                                  style: TextStyle(
+                                      fontFamily: 'Lexend',
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 18,
+                                      color: kFontColorDefault))
+                            else
+                              const TextSpan(
+                                  text: ' Bags',
+                                  style: TextStyle(
+                                      fontFamily: 'Lexend',
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 18,
+                                      color: kFontColorDefault)),
                           ],
                         ),
                       ),
@@ -135,7 +144,7 @@ class LargeOrderMarker extends StatelessWidget {
           height: 30,
           width: 80,
           decoration: const BoxDecoration(
-              color: kPrimaryBoldest,
+              color: Color.fromRGBO(240, 152, 0, 1),
               borderRadius: BorderRadius.only(
                 topRight: Radius.circular(16),
                 bottomLeft: Radius.circular(16),
@@ -147,7 +156,7 @@ class LargeOrderMarker extends StatelessWidget {
                   fontFamily: 'Lexend',
                   fontWeight: FontWeight.w700,
                   fontSize: 12,
-                  color: Colors.white),
+                  color: kFontColorDefault),
             ),
           ),
         ));

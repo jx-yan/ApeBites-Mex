@@ -1,6 +1,5 @@
 import 'package:apebites_mex/components/search_filter.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:apebites_mex/styles/styles.dart';
 import 'package:apebites_mex/components/components.dart';
 import 'package:go_router/go_router.dart';
@@ -14,23 +13,14 @@ class ReservationsScreen extends StatefulWidget {
 }
 
 class _ReservationsScreenState extends State<ReservationsScreen> {
-  final ScrollController _scrollController = ScrollController();
-  bool _isVisible = true;
 
   @override
   void initState() {
     super.initState();
-    _scrollController.addListener(() {
-      setState(() {
-        _isVisible = (_scrollController.position.userScrollDirection ==
-            ScrollDirection.forward);
-      });
-    });
   }
 
   @override
   void dispose() {
-    _scrollController.dispose();
     super.dispose();
   }
 

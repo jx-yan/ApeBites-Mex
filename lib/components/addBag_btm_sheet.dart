@@ -102,7 +102,7 @@ class _AddBagBottomSheetComponentState
                         borderRadius: BorderRadius.circular(48),
                       ),
                       padding: const EdgeInsets.all(15.0),
-                      backgroundColor: kPrimaryDefault,
+                      backgroundColor: kPrimaryBoldest,
                     ),
                     child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,

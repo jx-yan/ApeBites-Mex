@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:apebites_mex/styles/styles.dart';
 import 'package:apebites_mex/components/components.dart';
 import 'package:apebites_mex/screens/home/home_sales_card.dart';
@@ -14,23 +13,14 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final String _shopName = 'BreadTalk @ Tampines Mall';
-  final ScrollController _scrollController = ScrollController();
-  bool _isVisible = true;
 
   @override
   void initState() {
     super.initState();
-    _scrollController.addListener(() {
-      setState(() {
-        _isVisible = (_scrollController.position.userScrollDirection ==
-            ScrollDirection.forward);
-      });
-    });
   }
 
   @override
   void dispose() {
-    _scrollController.dispose();
     super.dispose();
   }
 
