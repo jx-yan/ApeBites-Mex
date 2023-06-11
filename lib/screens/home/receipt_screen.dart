@@ -296,8 +296,8 @@ class _ReceiptScreenState extends State<ReceiptScreen> {
                     child: Column(
                       children: [
                         const Spacer(),
-                        SizedBox(
-                            width: 350,
+                        Container(
+                            margin: const EdgeInsets.symmetric(horizontal: 25),
                             child: ElevatedButton(
                               onPressed: () {},
                               style: ElevatedButton.styleFrom(
@@ -307,34 +307,44 @@ class _ReceiptScreenState extends State<ReceiptScreen> {
                                 padding: const EdgeInsets.all(15.0),
                                 backgroundColor: kPrimaryBoldest,
                               ),
-                              child: const Text(
-                                'Collected',
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.white),
+                              child: const Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    'Collected',
+                                    style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w500,
+                                        color: Colors.white),
+                                  ),
+                                ],
                               ),
                             )),
                         const SizedBox(height: 35),
-                        SizedBox(
-                            width: 350,
+                        Container(
+                            margin: const EdgeInsets.symmetric(horizontal: 25),
                             child: ElevatedButton(
-                              onPressed: () {},
-                              style: ElevatedButton.styleFrom(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(48),
+                                onPressed: () {},
+                                style: ElevatedButton.styleFrom(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(48),
+                                  ),
+                                  padding: const EdgeInsets.all(15.0),
+                                  backgroundColor:
+                                      const Color.fromRGBO(245, 85, 56, 1),
                                 ),
-                                padding: const EdgeInsets.all(15.0),
-                                backgroundColor: const Color.fromRGBO(245, 85, 56, 1),
-                              ),
-                              child: const Text(
-                                'Cancel Reservation',
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.white),
-                              ),
-                            )),
+                                child: const Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      'Cancel Reservation',
+                                      style: TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w500,
+                                          color: Colors.white),
+                                    ),
+                                  ],
+                                ))),
                         SizedBox(
                             height: MediaQuery.of(context).size.height * 0.125)
                       ],

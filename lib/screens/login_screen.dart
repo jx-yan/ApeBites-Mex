@@ -8,24 +8,21 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             SizedBox(
-              height: 100,
+              height: MediaQuery.of(context).size.height * 0.15,
             ),
-            ApeBitesLogo(),
+            const ApeBitesLogo(),
             SizedBox(
-              height: 100,
+              height: MediaQuery.of(context).size.height * 0.15,
             ),
-            ContinueWithGoogleButton(),
-            SizedBox(
-              height: 50,
-            ),
-            ContinueWithMobileButton(),
+            const ContinueWithGoogleButton(),
+            // ContinueWithMobileButton(),
           ],
         ),
       ),
@@ -40,8 +37,8 @@ class ContinueWithGoogleButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-        width: 350,
+    return Container(
+        margin: const EdgeInsets.symmetric(horizontal: 50),
         child: ElevatedButton(
           onPressed: () => context.go('/home'),
           style: ElevatedButton.styleFrom(
@@ -75,48 +72,48 @@ class ContinueWithGoogleButton extends StatelessWidget {
   }
 }
 
-class ContinueWithMobileButton extends StatelessWidget {
-  const ContinueWithMobileButton({
-    super.key,
-  });
+// class ContinueWithMobileButton extends StatelessWidget {
+//   const ContinueWithMobileButton({
+//     super.key,
+//   });
 
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-        width: 350,
-        child: ElevatedButton(
-          onPressed: () {},
-          style: ElevatedButton.styleFrom(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(48),
-            ),
-            padding: const EdgeInsets.all(15.0),
-            backgroundColor: kPrimarySoftest,
-          ),
-          child: const Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              HeroIcon(
-                HeroIcons.phone,
-                size: 24,
-                color: kPrimaryBoldest,
-                style: HeroIconStyle.solid,
-              ),
-              SizedBox(
-                width: 20,
-              ),
-              Text(
-                'Continue with Mobile',
-                style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500,
-                    color: kPrimaryBold),
-              ),
-            ],
-          ),
-        ));
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return SizedBox(
+//         width: 350,
+//         child: ElevatedButton(
+//           onPressed: () {},
+//           style: ElevatedButton.styleFrom(
+//             shape: RoundedRectangleBorder(
+//               borderRadius: BorderRadius.circular(48),
+//             ),
+//             padding: const EdgeInsets.all(15.0),
+//             backgroundColor: kPrimarySoftest,
+//           ),
+//           child: const Row(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: [
+//               HeroIcon(
+//                 HeroIcons.phone,
+//                 size: 24,
+//                 color: kPrimaryBoldest,
+//                 style: HeroIconStyle.solid,
+//               ),
+//               SizedBox(
+//                 width: 20,
+//               ),
+//               Text(
+//                 'Continue with Mobile',
+//                 style: TextStyle(
+//                     fontSize: 18,
+//                     fontWeight: FontWeight.w500,
+//                     color: kPrimaryBold),
+//               ),
+//             ],
+//           ),
+//         ));
+//   }
+// }
 
 class ApeBitesLogo extends StatelessWidget {
   const ApeBitesLogo({

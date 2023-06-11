@@ -97,8 +97,8 @@ class _AddBagBottomSheetComponentState
                 margin: const EdgeInsets.only(bottom: 20),
                 child: Column(
                   children: [
-                    SizedBox(
-                        width: 350,
+                    Container(
+                        margin: const EdgeInsets.symmetric(horizontal: 25),
                         child: ElevatedButton(
                           onPressed: () {},
                           style: ElevatedButton.styleFrom(
