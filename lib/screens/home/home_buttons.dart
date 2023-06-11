@@ -21,71 +21,87 @@ class _HomeScreenButtonsState extends State<HomeScreenButtons> {
       margin: const EdgeInsets.only(left: 30, right: 30),
       height: 80,
       child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+        // Orders Button
         Expanded(
             child: Container(
           decoration: customBoxDecoration(),
           child: TextButton(
-            clipBehavior: Clip.hardEdge,
-            style: TextButton.styleFrom(
-              padding: const EdgeInsets.all(0),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
+              clipBehavior: Clip.hardEdge,
+              style: TextButton.styleFrom(
+                padding: const EdgeInsets.all(0),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16),
+                ),
               ),
-            ),
-            onPressed: () {
-              showModalBottomSheet<void>(
-                useSafeArea: true,
-                context: context,
-                builder: (BuildContext context) {
-                  return SizedBox(
-                    height: 200,
-                    child: Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.min,
-                        children: <Widget>[
-                          const Text('Add Info Modal BottomSheet'),
-                          ElevatedButton(
-                            child: const Text('Close'),
-                            onPressed: () => Navigator.pop(context),
-                          ),
-                        ],
-                      ),
-                    ),
-                  );
-                },
-              );
-            },
-            child: const Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Spacer(),
-                HeroIcon(
-                  HeroIcons.arrowUpTray,
-                  size: 20,
-                  color: kPrimaryBoldest,
-                  style: HeroIconStyle.solid,
-                ),
-                SizedBox(
-                  height: 8,
-                ),
-                AutoSizeText('Add Info',
-                    maxLines: 2,
-                    softWrap: true,
-                    maxFontSize: 12,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontFamily: 'Lexend',
-                        fontWeight: FontWeight.w500,
-                        color: kFontColorDefault)),
-                Spacer(),
-              ],
-            ),
-          ),
+              onPressed: () => context.go('/home/reservations'),
+              child: const Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Spacer(),
+                  HeroIcon(
+                    HeroIcons.clock,
+                    size: 20,
+                    color: kPrimaryBoldest,
+                    style: HeroIconStyle.solid,
+                  ),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  AutoSizeText('Orders',
+                      textAlign: TextAlign.center,
+                      maxFontSize: 12,
+                      style: TextStyle(
+                          fontFamily: 'Lexend',
+                          fontWeight: FontWeight.w500,
+                          color: kFontColorDefault)),
+                  Spacer(),
+                ],
+              )),
         )),
         const SizedBox(
           width: 10,
         ),
+        // Sales Button
+        Expanded(
+            child: Container(
+          decoration: customBoxDecoration(),
+          child: TextButton(
+              clipBehavior: Clip.hardEdge,
+              style: TextButton.styleFrom(
+                padding: const EdgeInsets.all(0),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16),
+                ),
+              ),
+              onPressed: () => context.go('/home/sales'),
+              child: const Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Spacer(),
+                  HeroIcon(
+                    HeroIcons.chartBarSquare,
+                    size: 20,
+                    color: kPrimaryBoldest,
+                    style: HeroIconStyle.solid,
+                  ),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  AutoSizeText('Sales',
+                      textAlign: TextAlign.center,
+                      maxFontSize: 12,
+                      style: TextStyle(
+                          fontFamily: 'Lexend',
+                          fontWeight: FontWeight.w500,
+                          color: kFontColorDefault)),
+                  Spacer(),
+                ],
+              )),
+        )),
+        const SizedBox(
+          width: 10,
+        ),
+        // Add Bag Button
         Expanded(
             child: Container(
           decoration: customBoxDecoration(),
@@ -142,80 +158,68 @@ class _HomeScreenButtonsState extends State<HomeScreenButtons> {
         const SizedBox(
           width: 10,
         ),
+        // Today's Bag Button
         Expanded(
             child: Container(
           decoration: customBoxDecoration(),
           child: TextButton(
-              clipBehavior: Clip.hardEdge,
-              style: TextButton.styleFrom(
-                padding: const EdgeInsets.all(0),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16),
-                ),
+            clipBehavior: Clip.hardEdge,
+            style: TextButton.styleFrom(
+              padding: const EdgeInsets.all(0),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
               ),
-              onPressed: () => context.go('/home/reservations'),
-              child: const Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Spacer(),
-                  HeroIcon(
-                    HeroIcons.clock,
-                    size: 20,
-                    color: kPrimaryBoldest,
-                    style: HeroIconStyle.solid,
-                  ),
-                  SizedBox(
-                    height: 8,
-                  ),
-                  AutoSizeText('Orders',
-                      textAlign: TextAlign.center,
-                      maxFontSize: 12,
-                      style: TextStyle(
-                          fontFamily: 'Lexend',
-                          fontWeight: FontWeight.w500,
-                          color: kFontColorDefault)),
-                  Spacer(),
-                ],
-              )),
-        )),
-        const SizedBox(
-          width: 10,
-        ),
-        Expanded(
-            child: Container(
-          decoration: customBoxDecoration(),
-          child: TextButton(
-              clipBehavior: Clip.hardEdge,
-              style: TextButton.styleFrom(
-                padding: const EdgeInsets.all(0),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16),
+            ),
+            onPressed: () {
+              showModalBottomSheet<void>(
+                useSafeArea: true,
+                context: context,
+                builder: (BuildContext context) {
+                  return SizedBox(
+                    height: 200,
+                    child: Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          const Text("Today's Bag Modal BottomSheet"),
+                          ElevatedButton(
+                            child: const Text('Close'),
+                            onPressed: () => Navigator.pop(context),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              );
+            },
+            child: const Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Spacer(),
+                HeroIcon(
+                  HeroIcons.arrowUpTray,
+                  size: 20,
+                  color: kPrimaryBoldest,
+                  style: HeroIconStyle.solid,
                 ),
-              ),
-              onPressed: () => context.go('/home/sales'),
-              child: const Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Spacer(),
-                  HeroIcon(
-                    HeroIcons.chartBarSquare,
-                    size: 20,
-                    color: kPrimaryBoldest,
-                    style: HeroIconStyle.solid,
-                  ),
-                  SizedBox(
-                    height: 8,
-                  ),
-                  AutoSizeText('Sales',
-                      textAlign: TextAlign.center,
-                      maxFontSize: 12,
-                      style: TextStyle(
-                          fontFamily: 'Lexend',
-                          fontWeight: FontWeight.w500,
-                          color: kFontColorDefault)),
-                  Spacer(),
-                ],
-              )),
+                SizedBox(
+                  height: 8,
+                ),
+                AutoSizeText("Today's Bag",
+                    maxLines: 2,
+                    softWrap: true,
+                    maxFontSize: 12,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontFamily: 'Lexend',
+                        fontWeight: FontWeight.w500,
+                        color: kFontColorDefault)),
+                Spacer(),
+              ],
+            ),
+          ),
         )),
       ]),
     );

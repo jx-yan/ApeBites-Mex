@@ -123,7 +123,7 @@ class PastReserveListBar extends StatelessWidget {
             const HeroIcon(HeroIcons.chevronRight,
                 color: kPrimaryBoldest, size: 24),
             const SizedBox(
-              width: 20,
+              width: 10,
             ),
           ])),
     );
