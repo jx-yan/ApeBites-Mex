@@ -44,7 +44,7 @@ class _HomeScreenButtonsState extends State<HomeScreenButtons> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
-                          const Text('Add Image Modal BottomSheet'),
+                          const Text('Add Info Modal BottomSheet'),
                           ElevatedButton(
                             child: const Text('Close'),
                             onPressed: () => Navigator.pop(context),
@@ -69,7 +69,7 @@ class _HomeScreenButtonsState extends State<HomeScreenButtons> {
                 SizedBox(
                   height: 8,
                 ),
-                AutoSizeText('Add Image',
+                AutoSizeText('Add Info',
                     maxLines: 2,
                     softWrap: true,
                     maxFontSize: 12,
@@ -99,6 +99,7 @@ class _HomeScreenButtonsState extends State<HomeScreenButtons> {
               ),
               onPressed: () {
                 showModalBottomSheet<void>(
+                  isScrollControlled: true,
                   useSafeArea: true,
                   backgroundColor: Colors.white,
                   shape: const RoundedRectangleBorder(
